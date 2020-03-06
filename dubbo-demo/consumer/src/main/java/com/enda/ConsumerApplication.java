@@ -6,11 +6,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * Hello world!
+ * @author Ienovo
  */
 @EnableDubbo
 @SpringBootApplication
-public class App {
+public class ConsumerApplication {
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(App.class);
+        SpringApplication.run(ConsumerApplication.class);
     }
 }

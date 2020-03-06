@@ -1,17 +1,29 @@
 package com.enda.controller;
 
+import com.enda.api.bean.UserInfo;
 import com.enda.service.impl.UserServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-public class UserController {
-    @Autowired
-    private UserServiceImpl userServiceImpl;
+import java.util.List;
 
-    @GetMapping("test")
-    public String test() {
-        return userServiceImpl.run("wt");
+/**
+ * @author Ienovo
+ */
+@RestController
+@RequestMapping("/user")
+public class UserController {
+
+    private final UserServiceImpl userServiceImpl;
+
+    public UserController(UserServiceImpl userServiceImpl) {
+        this.userServiceImpl = userServiceImpl;
+    }
+
+
+    @GetMapping
+    public List<UserInfo> test() {
+        return userServiceImpl.initUserInfo();
     }
 }
