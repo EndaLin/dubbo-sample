@@ -1,0 +1,14 @@
+dubbo:
+  application:
+    name: annotation-comsumer
+  registry:
+    protocol: zookeeper
+    address: 127.0.0.1:2181
+  #  metadata-report:
+  #    address: zookeeper://127.0.0.1:2181
+  monitor:
+    protocol: registry
+
+
+server:
+  port: 8082
